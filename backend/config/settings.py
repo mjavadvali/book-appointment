@@ -4,11 +4,11 @@ from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(os.path.join(BASE_DIR, '/env/.env'))
 
+SECRET_KEY = os.environ.get("SECRET_KEY", "your_default_secret_key")  
+DEBUG = os.environ.get("DEBUG", "True") == "True"  
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "your_default_secret_key")  # Provide a default if necessary
-DEBUG = os.environ.get("DEBUG", "True") == "True"  # Set DEBUG based on environment variable
-# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
 
 ALLOWED_HOSTS = []
 
@@ -89,13 +89,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("POSTGRES_DB", "postgres"),  
-        "USER": os.environ.get("POSTGRES_USER", "postgres"),  
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", ""),
-        "HOST": 'db', 
-        "PORT": '5432', 
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('PGDB_NAME'),
+        'USER': os.getenv('PGDB_USER'),
+        'PASSWORD': os.getenv('PGDB_PASSWORD'),
+        'HOST': os.getenv('PGDB_HOST', 'db'),
+        'PORT': os.getenv('PGDB_PORT', '5432'),
     }
 }
 # DATABASES = {
