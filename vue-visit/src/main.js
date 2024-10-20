@@ -88,7 +88,7 @@ app.component('base-auth-button', BaseAuthButton )
 
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://0.0.0.0:8000'
+axios.defaults.baseURL = 'http://localhost:8000'
 app.use(pinia)
 app.use(router)
 app.mount('#app')

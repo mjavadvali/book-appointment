@@ -106,7 +106,7 @@ export default {
 
         const sendNewEmail = async (newEmail) => {
             console.log(newEmail);
-            const url = 'http://127.0.0.1:8000/accounts/reset_email/';
+            const url = '/accounts/reset_email/';
             const token = auth.authToken;
             const data = {
                 username: auth.username,
@@ -141,7 +141,7 @@ export default {
         };
 
         const sendNewPassword = async (newPassword, oldPassword) => {
-            const url = 'http://127.0.0.1:8000/api/authentication/password/change/';
+            const url = '/api/authentication/password/change/';
             const token = auth.authToken;
             const data = {
                 new_password1: newPassword,

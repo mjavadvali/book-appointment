@@ -16,7 +16,7 @@ export const userAuthStore = defineStore('auth', {
         try {
 
             const response = await axios.post(
-                'http://127.0.0.1:8000/api/authentication/login/',
+                '/api/authentication/login/',
                 {
                 username: username,
                 password: password
@@ -41,7 +41,7 @@ export const userAuthStore = defineStore('auth', {
             this.username = username
             localStorage.setItem('password', password)
             this.password = password
-            const res = await axios.get('http://127.0.0.1:8000/accounts/get_user_pk/', {
+            const res = await axios.get('/accounts/get_user_pk/', {
                 params: {
                     username: this.username
                 }

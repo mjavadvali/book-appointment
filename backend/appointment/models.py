@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 def user_directory_path(instance, filename):
-    return f'/photo_identification/{instance.email}/{filename}'
+    return f'photo_identification/{instance.email}/{filename}'
 
 
 class Doctor(models.Model):

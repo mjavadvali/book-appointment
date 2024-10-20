@@ -57,7 +57,7 @@ export default {
     methods: {
         async getUserIno() {
             const user_pk = localStorage.getItem('user_pk')
-            let url = `http://127.0.0.1:8000/accounts/get_user_info/?user_pk=${user_pk}`
+            let url = `/accounts/get_user_info/?user_pk=${user_pk}`
             const response = await axios.get(url,
                 {
                 params: {  

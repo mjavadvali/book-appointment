@@ -40,7 +40,7 @@ export default {
     const fetchDoctor = async () => {
       try {
         const response = await axios.get(
-          `http://127.0.0.1:8000/doctor/${props.id}/`
+          `/doctor/${props.id}/`
         );
         doctor.value = response.data;
       } catch (error) {

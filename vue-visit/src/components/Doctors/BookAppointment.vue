@@ -120,7 +120,7 @@
       const fetchDoctors = async () => {
         if (!props.doctor) {
           try {
-            const url = 'http://127.0.0.1:8000/doctors/';
+            const url = '/doctors/';
             const response = await axios.get(url);
             doctorsList.value = response.data;
           } catch (error) {
@@ -133,7 +133,7 @@
   
       const getEmptyTimeSlots = async (date) => {
         try {
-          const url = `http://127.0.0.1:8000/api/get_empty_time_slots/?doctor_id=${doctorId.value}&date=${date}`;
+          const url = `/api/get_empty_time_slots/?doctor_id=${doctorId.value}&date=${date}`;
           const response = await axios.get(url);
           availableTimeSlots.value = response.data.available_slots;
         } catch (error) {
@@ -142,7 +142,7 @@
       };
   
       const book = async () => {
-        const url = 'http://127.0.0.1:8000/appointment/booking/';
+        const url = '/appointment/booking/';
 
         if (enteredDate.value === null || enteredTime.value === null) {
           alert('Date and Time need to be filled')

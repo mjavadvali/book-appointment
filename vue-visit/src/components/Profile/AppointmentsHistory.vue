@@ -43,7 +43,7 @@ export default {
         const router = useRouter();
           
         const checkIfAppointmentIsReviewed = async (appointment) => {
-            let url = 'http://127.0.0.1:8000/api/check_app_reviewed/';
+            let url = '/api/check_app_reviewed/';
             try {
                 const response = await axios.get(url, {
                     params: {

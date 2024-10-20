@@ -49,7 +49,7 @@
         console.log('Score:', score.value);
         console.log('Feedback:', feedback.value);
         try {
-          const url = 'http://127.0.0.1:8000/appointment/review/';
+          const url = '/appointment/review/';
           const token = auth.authToken;
           console.log(token);
   

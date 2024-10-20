@@ -47,6 +47,12 @@ services:
     image: nginx:alpine
     ports:
       - "80:80"  
+    
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      
     volumes:
       - .:/app
       - ./dev/nginx/nginx.conf:/etc/nginx/nginx.conf:ro  

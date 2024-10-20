@@ -40,7 +40,7 @@ export default {
       const auth = userAuthStore();
 
       const signup = async () => {
-      let url = 'http://127.0.0.1:8000/accounts/signup/';
+      let url = '/accounts/signup/';
 
       try {
         const response = await axios.post(

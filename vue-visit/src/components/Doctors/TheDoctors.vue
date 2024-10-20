@@ -57,7 +57,7 @@ export default {
 
     const fetchDoctors = async (speciality) => {
       try {
-        let url = 'http://localhost:8000/doctors/';
+        let url = '/doctors/';
         if (speciality !== 'all') {
           url += `${speciality}/`;
         }
@@ -72,7 +72,7 @@ export default {
 
     const getSpecialtyChoices = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/api/specialty_choices/');
+        const response = await axios.get('/api/specialty_choices/');
         specialtyChoices.value = response.data;
       } catch (error) {
         console.error('Failed to fetch specialty choices:', error);
