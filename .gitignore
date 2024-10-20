@@ -14,7 +14,7 @@ Thumbs.db
 *.pid
 *.swp
 *.swo
-*.env
+
 *.local
 node_modules/
 npm-debug.log*
