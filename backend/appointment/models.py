@@ -134,12 +134,12 @@ class Appointment(models.Model):
         return super().save(*args, **kwargs)
     
     def calculate_exact_time(self, i):
-        duration = self.TIMESLOT_LIST[self.timeslot][1]  # This gets the '09:00 - 09:30' part
-        start_or_end = duration.split(' - ')[i]  # Use 0 for start, 1 for end
-        hour, minute = start_or_end.split(':')  # Split time into hours and minutes
-        exact_time = datet.time(int(hour), int(minute))  # Create a time object
+        duration = self.TIMESLOT_LIST[self.timeslot][1]  
+        start_or_end = duration.split(' - ')[i]  
+        hour, minute = start_or_end.split(':')  
+        exact_time = datet.time(int(hour), int(minute)) 
         day = self.date
-        exact_datetime = datetime.combine(day, exact_time)  # Combine date and time to get datetime
+        exact_datetime = datetime.combine(day, exact_time)  
         return exact_datetime
 
 

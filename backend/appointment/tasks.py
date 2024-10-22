@@ -33,7 +33,6 @@ def appointment_notif():
 
     recipient_list = [appointment.patient.email]
 
-        # Send the email
     send_mail(subject, message, 'no-reply@example.com', recipient_list)
 
     
